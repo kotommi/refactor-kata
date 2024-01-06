@@ -30,7 +30,7 @@ function createApp(database) {
   }
 
   function parsePlainDate(dateString) {
-    return dateString ? Temporal.PlainDate.from(dateString) : undefined; 
+    return dateString ? Temporal.PlainDate.from(dateString) : undefined;
   }
 
   function calculateCost(age, type, baseCost, date) {
@@ -55,7 +55,7 @@ function createApp(database) {
   }
 
   function calculateCostForDayTicket(age, baseCost, date) {
-    let reduction = calculateReduction( date);
+    let reduction = calculateReduction(date);
     if (age === undefined) {
       return Math.ceil(baseCost * (1 - reduction / 100));
     }
@@ -90,7 +90,7 @@ function createApp(database) {
       if (
         date &&
         date.year === holiday.getFullYear() &&
-        date.month - 1=== holiday.getMonth() &&
+        date.month - 1 === holiday.getMonth() &&
         date.day === holiday.getDate()
       ) {
         return true;
